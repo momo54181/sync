@@ -68,7 +68,7 @@ init_script() {
 
 # repo init and repo sync
 get_twrp_minimal_manifest() {
-  local MIN_MANIFEST="git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git"
+  local MIN_MANIFEST="git://github.com/momo54181/platform_manifest_twrp_omni.git"
   cd $MANIFEST_DIR
   echo "-- Initialising the $TWRP_BRANCH minimal manifest repo ..."
   repo init --depth=1 -u $MIN_MANIFEST -b $TWRP_BRANCH
