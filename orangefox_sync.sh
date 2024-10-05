@@ -35,10 +35,10 @@ do_fox_121() {
 	BASE_VER=12;
 	FOX_BRANCH="fox_12.1";
 	FOX_DEF_BRANCH="fox_12.1";
-	TWRP_BRANCH="android-12.1";
+	TWRP_BRANCH="twrp-12.1";
 	DEVICE_BRANCH="android-12.1";
 	test_build_device="miatoll"; # the device whose tree we can clone for compiling a test build
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_aosp.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 	echo "-- NOTE: the \"$FOX_BRANCH\" branch is still work-in-progress, and will stay for some time at the Beta stage. Treat it as such.";
 }
@@ -47,10 +47,10 @@ do_fox_110() {
 	BASE_VER=11;
 	FOX_BRANCH="fox_11.0";
 	FOX_DEF_BRANCH="fox_11.0";
-	TWRP_BRANCH="android-11";
+	TWRP_BRANCH="twrp-11";
 	DEVICE_BRANCH="android-11";
 	test_build_device="vayu"; # the device whose tree we can clone for compiling a test build
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_aosp.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 	echo "-- NOTE: the \"$FOX_BRANCH\" branch is still BETA as far as Virtual A/B (\"VAB\") devices are concerned. Treat it as such.";
 }
@@ -59,10 +59,10 @@ do_fox_100() {
 	BASE_VER=10;
 	FOX_BRANCH="fox_10.0";
 	FOX_DEF_BRANCH="fox_10.0";
-	TWRP_BRANCH="android-10.0";
+	TWRP_BRANCH="twrp-10.0-deprecated";
 	DEVICE_BRANCH="android-10";
 	test_build_device="miatoll";
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_omni.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 }
 
@@ -70,10 +70,10 @@ do_fox_90() {
 	BASE_VER=9;
 	FOX_BRANCH="fox_9.0";
 	FOX_DEF_BRANCH="fox_9.0";
-	TWRP_BRANCH="android-9.0";
+	TWRP_BRANCH="twrp-9.0";
 	DEVICE_BRANCH="android-9.0";
 	test_build_device="mido";
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_omni.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 }
 
@@ -81,10 +81,10 @@ do_fox_81() {
 	BASE_VER=8;
 	FOX_BRANCH="fox_9.0";
 	FOX_DEF_BRANCH="fox_8.1";
-	TWRP_BRANCH="android-8.1";
+	TWRP_BRANCH="twrp-8.1";
 	DEVICE_BRANCH="android-8.1";
 	test_build_device="kenzo";
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_omni.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 }
 
@@ -92,10 +92,10 @@ do_fox_71() {
 	BASE_VER=6;
 	FOX_BRANCH="fox_9.0";
 	FOX_DEF_BRANCH="fox_7.1";
-	TWRP_BRANCH="android-7.1";
+	TWRP_BRANCH="twrp-7.1";
 	DEVICE_BRANCH="android-7.1";
 	test_build_device="hermes";
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_omni.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 }
 
@@ -103,10 +103,10 @@ do_fox_60() {
 	BASE_VER=6;
 	FOX_BRANCH="fox_9.0";
 	FOX_DEF_BRANCH="fox_6.0";
-	TWRP_BRANCH="android-6.0";
+	TWRP_BRANCH="twrp-6.0";
 	DEVICE_BRANCH="android-6.0";
 	test_build_device="klte";
-	MIN_MANIFEST="https://github.com/momo54181/manifest_pb.git";
+	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_omni.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 }
 
@@ -276,9 +276,9 @@ clone_common() {
 	git clone https://github.com/TeamWin/android_device_qcom_common -b $DEVICE_BRANCH device/qcom/common;
    fi
 
-   if [ ! -d "device/qcom/android-common" ]; then
-   	echo "-- Cloning android-common ...";
-   	git clone https://github.com/TeamWin/android_device_qcom_android-common -b $DEVICE_BRANCH device/qcom/android-common;
+   if [ ! -d "device/qcom/twrp-common" ]; then
+   	echo "-- Cloning twrp-common ...";
+   	git clone https://github.com/TeamWin/android_device_qcom_twrp-common -b $DEVICE_BRANCH device/qcom/twrp-common;
    fi
 }
 
