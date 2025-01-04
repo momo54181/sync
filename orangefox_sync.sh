@@ -62,7 +62,7 @@ do_fox_100() {
 	TWRP_BRANCH="twrp-10.0-deprecated";
 	DEVICE_BRANCH="android-10";
 	test_build_device="miatoll";
-	MIN_MANIFEST="https://github.com/momo54181/platform_manifest_twrp_omni.git";
+	MIN_MANIFEST="https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git";
 	[ -z "$MANIFEST_DIR" ] && MANIFEST_DIR="$BASE_DIR/$FOX_DEF_BRANCH";
 }
 
